@@ -15,7 +15,7 @@
         }
 
         .accordion-trigger {
-            background-color: var(--accent);
+            background-color: #F2ECD3;
             color: var(--accent-foreground);
             padding: 1rem;
             width: 100%;
@@ -30,8 +30,8 @@
         }
 
         .accordion-trigger:hover {
-            background-color: var(--primary);
-            color: var(--primary-foreground);
+            background-color: #E5CD6F;
+            /* color: var(--primary-foreground); */
         }
 
         .accordion-trigger::after {
@@ -53,19 +53,58 @@
         .accordion-content.active {
             display: block;
         }
+
+        /* New styles for the fixed "Back to Portfolio" link */
+        .back-to-portfolio {
+            position: fixed;
+            left: 20px;
+            top: 60px;
+            z-index: 1000;
+            padding: 10px;
+            /* transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; */
+            text-decoration: none;
+            color: var(--muted-foreground);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .back-to-portfolio:hover {
+            /* transform: scale(1.05);
+            font-size: 1.05em;
+            transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; */
+            color: var(--foreground);
+        }
+        
+
+        .back-to-portfolio svg {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-portfolio {
+                left: 10px;
+                top: 10px;
+            }
+        }
+
+        /* Adjust main content to not overlap with fixed link */
+        .main-content {
+            padding-top: 60px;
+        }
     </style>
 </head>
 <body>
     <div class="bg-background min-h-screen">
-        <div class="container mx-auto px-4 py-12 max-w-4xl">
-            <a href="index.html" class="inline-flex items-center text-primary hover:underline mb-8">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                Back to Portfolio
-            </a>
+        <a href="index.html" class="back-to-portfolio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Portfolio
+        </a>
 
-            <h1 class="text-4xl font-bold mb-4">The University of Michigan-Flint</h1>
+        <div class="container mx-auto px-4 py-12 max-w-4xl main-content">
+            <h1 class="text-4xl font-bold mb-4">NSF REU: The University of Michigan-Flint</h1>
             <p class="text-xl text-muted-foreground mb-12">
-                How is computer-mediated consent exchanged among aurally and visually disabled populations?
+                How is computer-mediated consent in online to-person dating environments exchanged among aurally and visually disabled populations?
             </p>
 
             <br><br>
@@ -75,28 +114,26 @@
                 class="rounded-lg object-cover w-full mb-12"
                 style="height: 60%;">
 
-                <br><br>
-                <div class="flex justify-between items-start mb-12 px-4">
-                    <div class="flex flex-col items-center text-center space-y-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><polygon points="12 2 15 8 22 8 17 12 19 19 12 15 5 19 7 12 2 8 9 8" /></svg>
-                        <h2 class="text-sm font-semibold mb-1">Role</h2>
-                        <p class="text-sm text-muted-foreground">UX Researcher</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center space-y-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        <h2 class="text-sm font-semibold mb-1">Duration</h2>
-                        <p class="text-sm text-muted-foreground">May 2024 - Present</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center space-y-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        <h2 class="text-sm font-semibold mb-1">Team</h2>
-                        <p class="text-sm text-muted-foreground">3 UX Researcher<br>1 Mentor</p>
-                    </div>
+            <br><br>
+            <div class="flex justify-between items-start mb-12 px-4">
+                <div class="flex flex-col items-center text-center space-y-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><polygon points="12 2 15 8 22 8 17 12 19 19 12 15 5 19 7 12 2 8 9 8" /></svg>
+                    <h2 class="text-sm font-semibold mb-1">Role</h2>
+                    <p class="text-sm text-muted-foreground">UX Researcher</p>
                 </div>
-                
+                <div class="flex flex-col items-center text-center space-y-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h2 class="text-sm font-semibold mb-1">Duration</h2>
+                    <p class="text-sm text-muted-foreground">May - Aug 2024</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h2 class="text-sm font-semibold mb-1">Team</h2>
+                    <p class="text-sm text-muted-foreground">3 UX Researchers<br>1 Mentor</p>
+                </div>
+            </div>
 
             <br><br>
-            
 
             <section class="mb-12">
                 <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
@@ -105,43 +142,69 @@
                 </p>
             </section>
             <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Outcomes</h2>
+                <h2 class="text-2xl font-bold mb-4">What I Accomplished in 10 Weeks</h2>
                 <p class="mb-4 text-muted-foreground">
-                    From desigining the study to analyzing the data, I created an 80+ question survey with my team that is shared
-                    to 200 participants from the aurally and visually disabled populations. I'm currently analyzing the rest of the data to
-                    create a theme story for publication.
+                    • Familiarize myself with 10+ related literature reviews<br>
+                    • Applied for IRB approval to conduct our Qualtrics survey with 80+ questions<br>
+                    • Collected 68 out of 200 survey responses through Prolific recruitment<br>
+                    • Implemented reflective thematic analysis to uncover findings and create themes<br>
+                    • Delivered 10 presentations for weekly sprint reviews<br>
+                    • Attended weekly meetings and seminars (e.g. graduate school, mental health)<br>
+                    • Bonded with other researchers and mentors on our field trips :)<br>
+                </p>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Beyond the NSF REU Program</h2>
+                <p class="mb-4 text-muted-foreground">
+                    • Successfully recieved all 200 survey responses<br>
+                    • Focusing on one of the three population groups in the data, I am analyzing and developing a theming story<br>
+                    • Process of submitting publication for the CHI Conference<br>
+                </p>
             </section>
 
             <section class="mb-12">
                 <h2 class="text-2xl font-bold mb-4">Research Timeline</h2>
-                <!-- <img src="https://i.imgur.com/ZXZXFcP.png"
-                    alt="UX Research Process Diagram"
-                    class="rounded-lg object-contain w-full mb-8"> -->
                 <div class="accordion">
                     <div class="accordion-item">
                         <button class="accordion-trigger">
-                            <span>1. Familiarization with Publication Outputs</span>
+                            <span>1. Creating the Foundation - literature reviews, research structure & goals</span>
                         </button>
                         <div class="accordion-content">
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Become familiar with the format or research papers by analzying 10+ literature
-                                    reviews
-                                </li>
+                                <p class="mb-4 text-muted-foreground">
+                                    To kick off the project, I immersed myself in over 10 literature reviews, diving deep into the structure of research papers,
+                                    identifying knowledges gaps within the related field and exploring an UX methodological toolbox to identify the most effective
+                                    approach for our study.
+                                    <br><br>
+                                    In the research, particiaptory design is used to navigate how consent can be communicated in both online and in-person dating 
+                                    environments among populations with visual and aural disabilities to understand needed accomodations, comfort and safety.
+
+                                   
+                                    <br><br>
+
                                     <img src="img/proj-umich/lit-reviews.png">
-                                <li>Reviewed a UX methodological toolbox to understand what method is best suited for our
-                                    study design </li>
-                                <li>Clarified long-term product goal for our 10 weeks</li>
+                 
                             </ul>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-trigger">2. Designing the Study Plan</button>
+                        <button class="accordion-trigger">2. Designing the Study Plan - survey approach, PEERRS certification, IRB approval</button>
                         <div class="accordion-content">
                             <ul class="list-disc pl-5 space-y-2">
-                                <li>Create a study plan to recruit at least 20 participants</li>
-                                <li>Define recruitment criteria - aurally and visually disabled populations with online dating experience</li>
-                                <li>Determine research platforms</li>
-                                    <img src="img/proj-umich/studyplan-prolific.png"
+                                <p class="mb-4 text-muted-foreground">
+                                    With my team, I created a study plan to recruit at least 20 participants. Initially, we had planned to conduct in-person group interviews to explore how consent is exchanged in these contexts. However, due to resource limitations and accommodation concerns, we decided to transition to a survey approach. 
+                                    <br><br>
+                                    Since I was working with human subjects, I obtained certification in PEERRS (Program for Education and Evaluation in Responsible Research and Scholarship) research ethics and compliance to ensure the study adhered to ethical guidelines and best practices.
+                                    <br><br>
+                                    The Institutional Review Board (IRB) process, initially estimated to take a week, ended up taking nearly half of the program's duration. Determining the survey structure—including question flow, consent form, and story writing—required constant iterations. Based on IRB feedback and further literature reviews, I revised both the survey structure and content. After several rounds of revisions and multiple rejections from the IRB, I addressed the feedback and resolved inconsistencies, ultimately leading to the approval for our 80+ question survey to be launched.
+                                    <br><br>
+                                    Through Prolific, we successfully recruited 200 participants, focusing on individuals with aural and/or visual disabilities who had experience with online dating. I designed a survey structure with a flow aimed at understanding their online and in-person interactions, integrating participatory design methods through open-ended questions to spark product innovation.
+                                    <br><br>
+                                    
+                                    <img src="img/proj-umich/brainstorm-whiteboard.png">
+
+                                    <!-- <img src="img/proj-umich/studyplan-prolific.png"
                                     class="rounded-lg object-contain w-full"
                                     style="width:30%;">
 
@@ -150,138 +213,122 @@
                                     style="width:30%;">
                                     <img src="img/proj-umich/studyplan-peerrs.png"
                                     class="rounded-lg object-contain w-full"
-                                    style="width:30%;">
-                                <li>Choose method - surveys</li>
-                                <li>Submit IRB</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-trigger">3. Seeking IRB Approval</button>
-                        <div class="accordion-content">
-                            <p class="mb-4 text-muted-foreground">
-                                What was estimated to be done in a week ended up 
-                                taking almost half of the program lenth to be completed. 
-                            </p>
-
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Determining survey structure - question flow, consent form, story writing</li>
-                                <li>Constant iterations - based on IRB feedback, I revised survey questions </li>
-                                <img src="img/proj-umich/brainstorm-whiteboard.png">
- 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-trigger">4. Why Reflexive Thematic Analysis (RTA)?</button>
-                        <div class="accordion-content">
-
-                            <p class="mb-4 text-muted-foreground">
-                                More literature was reviewed to understand a wide variety of data analysis method
-
-                                <br><br>
-
-                                I supported the decision for RTA due to its flexible appraoch in understanding 
-                                a diverse quantiative data with a curious mindset and the importance of identifying
-                                recurring patterns and themes from our participant interactions.
-                            </p>
+                                    style="width:30%;"> -->
                             
+
+
+                                </p>
+
+                                    
+                               
+                   
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-trigger">5. Theming and Data Analysis Process</button>
+                        <button class="accordion-trigger">3. Analysis Process - survey revisions, RTA, codebook & themes</button>
                         <div class="accordion-content">
                             <p class="mb-4 text-muted-foreground">
-                                Codingbook
+                                To reach 200 participants, we first released the survey to 20 to ensure data alignment with our objectives. After receiving feedback, my team and I revised the survey questions before relaunching it to the remaining participants. We also reviewed additional literature to refine our data analysis methods.
                                 <br><br>
+                                I supported the use of Reflexive Thematic Analysis (RTA) for its flexibility in analyzing diverse quantitative data and its focus on identifying recurring patterns. This was crucial for understanding potential patterns across different disability groups. 
+                                <br><br>
+                                As we compiled the data in Miro, I created a codebook to identify consistent patterns and connected themes, leading to a deeper understanding of how aurally and visually disabled populations communicate consent.
 
-                                I supported the decision for RTA due to its flexible appraoch in understanding 
-                                a diverse quantiative data with a curious mindset and the importance of identifying
-                                recurring patterns and themes from our participant interactions.
+                                <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+                                    <img src="img/proj-umich/uc-reu-miro.png"
+                                        alt="Before and After Comparison"
+                                        class="rounded-lg object-contain w-full">
+                
+                                    <img src="img/proj-umich/uc-reu-themes.png"
+                                        alt="Before and After Comparison"
+                                        class="rounded-lg object-contain w-full">
+                                    
+                                    
+                                   
+                                </div>
                             </p>
-                            
+
+                           
                         </div>
                     </div>
+                   
+           
                 </div>
             </section>
-<!-- 
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Key Findings</h2>
-                <img src="https://i.imgur.com/Hy5VvPB.png"
-                    alt="Cultural Differences in E-commerce Preferences"
-                    class="rounded-lg object-contain w-full mb-8">
-                <ul class="space-y-2 text-muted-foreground">
-                    <li>• Western users preferred minimalist designs with more white space</li>
-                    <li>• Eastern users favored information-dense layouts with multiple product options visible</li>
-                    <li>• Color preferences and symbolism varied significantly between cultures</li>
-                    <li>• Payment method preferences differed, with mobile payments more popular in Eastern markets</li>
-                    <li>• Product review sections were more influential for Eastern users in purchase decisions</li>
-                </ul>
-            </section> -->
 
             <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Impact and Results</h2>
+                <h2 class="text-2xl font-bold mb-4">Reflections & Results</h2>
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <img src="https://i.imgur.com/8Gy2Uxe.png"
+
+                    <img src="img/proj-umich/uc-reu-doug.png"
                         alt="Before and After Comparison"
                         class="rounded-lg object-contain w-full">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Quantitative Improvements</h3>
-                        <ul class="space-y-2 text-muted-foreground">
-                            <li>• 40% increase in international user engagement</li>
-                            <li>• 25% improvement in task completion rates for non-native users</li>
-                            <li>• 30% reduction in cart abandonment rate</li>
-                            <li>• 20% increase in average session duration</li>
-                        </ul>
-                    </div>
+
+                    <img src="img/proj-umich/uc-reu-bbbd.png"
+                        alt="Before and After Comparison"
+                        class="rounded-lg object-contain w-full">
+                    
+                    
+                   
                 </div>
                 <p class="text-muted-foreground">
-                    These improvements were achieved through implementing localized homepage layouts, culturally adapted product
-                    categorization, and region-specific payment options based on our research findings.
+                    Pictured above is my mentor Dr. Doug Zytko and co-researchers Brooke Bui, Brooklynn Kelly, & Devin Tebbe.
+                    <br><br>
+                    With no prior professional experience in this field, I walked in on my first day without expectations. 
+                    Flint was immediately different from the life I was used to. I had gone from a lively college town to what felt like a quiet, 
+                    unfamiliar place.
+                    <br><br>
+                    The first days were rough – no friends, nothing to do, I felt overwhelmed and lonely. I even wanted to leave. 
+                    But after connecting with the cohort and as the research progressed, I started to rediscover my sense of purpose.
+                    <br><br>
+                    I joined a project with this amazing team to understand how the aurally and visually impaired navigate consent in 
+                    online-to-in-person dating environments. 
+                    <br><br>
+                    The iterative process of conducting UX research was both challenging and rewarding, teaching me to trust myself and be 
+                    confident in my choices. It also demonstrated that things don’t always go as planned. In this case, we faced a few 
+                    challenges that slowed us from analyzing all of our responses.
+                    <br><br>
+                    This experience in Flint was full of surprises. Despite its reputation, I discovered a strong, supportive community 
+                    within the research and the city itself.    
+
                 </p>
             </section>
 
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Reflections and Learnings</h2>
-                <ul class="space-y-2 text-muted-foreground">
-                    <li>• Gained practical experience in cross-cultural UX research methodologies</li>
-                    <li>• Developed skills in synthesizing qualitative and quantitative data</li>
-                    <li>• Improved ability to communicate research findings to diverse stakeholders</li>
-                    <li>• Learned to balance business goals with user needs in a global context</li>
-                    <li>• Enhanced cultural sensitivity and awareness in UX design</li>
-                </ul>
-            </section>
 
-            <div class="flex justify-center">
-                <a href="index.html" class="btn btn-primary">Back to Portfolio</a>
-            </div>
+           
         </div>
     </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    const accordionTriggers = document.querySelectorAll('.accordion-trigger');
-    
-    accordionTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            const isActive = content.classList.contains('active');
+            const accordionTriggers = document.querySelectorAll('.accordion-trigger');
             
-            // Close all accordion items
-            document.querySelectorAll('.accordion-content').forEach(item => {
-                item.classList.remove('active');
+            accordionTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isActive = content.classList.contains('active');
+                    
+                    // Close all accordion items
+                    document.querySelectorAll('.accordion-content').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    document.querySelectorAll('.accordion-trigger').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the clicked item if it wasn't already active
+                    if (!isActive) {
+                        content.classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
             });
-            document.querySelectorAll('.accordion-trigger').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Open the clicked item if it wasn't already active
-            if (!isActive) {
-                content.classList.add('active');
-                this.classList.add('active');
-            }
+
+            // Removed the script for hiding/showing the "Back to Portfolio" link
         });
-    });
-});
     </script>
+
 </body>
 </html>
+
