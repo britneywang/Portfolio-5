@@ -1,157 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Britney Wang</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Britney Wang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <div class="bg-background min-h-screen flex flex-col">
-        <header class="py-6 px-8 bg-light-blue">
-            <nav class="container-narrow mx-auto flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-primary hover:text-primary-80 transition-colors">
-                    Britney Wang
-                </a>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-                    <a href="about.html" class="hover:text-primary transition-colors">About</a>
-                </div>
-            </nav>
-        </header>
+  <div class="bg-background min-h-screen flex flex-col">
+      <header class="py-6 px-8">
+          <nav class="container-narrow mx-auto flex justify-between items-center">
+              <a href="index.html" class="hover:text-primary transition-colors">
+                  Britney Wang
+              </a>
+              <div class="flex items-center space-x-4">
+                  <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                  <a href="about.html" class="hover:text-primary transition-colors">About</a>
+              </div>
+          </nav>
+      </header>
 
-        <main class="flex-grow">
-            <section class="py-16">
-                <div class="container-narrow mx-auto px-8">
-                    <h1 class="text-4xl font-bold mb-8 text-primary">About Me</h1>
+      <!-- Sidebar Navigation -->
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      
+      <nav class="sidebar-nav" id="sidebar-nav">
+          <!-- <h2 class="sidebar-nav-title">Page Sections</h2> -->
+          <ul class="sidebar-nav-list">
+              <li class="sidebar-nav-item">
+                  <a href="#intro" class="sidebar-nav-link" data-section="intro">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      Introduction
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#education" class="sidebar-nav-link" data-section="education">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                      Education
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#work" class="sidebar-nav-link" data-section="work">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                      Work Experience
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#involvement" class="sidebar-nav-link" data-section="involvement">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                      Involvement
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#awards" class="sidebar-nav-link" data-section="awards">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                      Honors & Awards
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#skills" class="sidebar-nav-link" data-section="skills">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                      Skills
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#certifications" class="sidebar-nav-link" data-section="certifications">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                      Certifications
+                  </a>
+              </li>
+          </ul>
+      </nav>
+
+      <main class="flex-grow">
+          <!-- Intro Section -->
+          <section id="intro" class="py-20">
+              <div class="container-narrow mx-auto px-8">
+                  <div class="grid md:grid-cols-2 gap-12 items-start">
+                      <div class="profile-image-container">
+                          <img src="img/about/profile.jpg" alt="Britney Wang" class="profile-image">
+                      </div>
+                      <div class="intro-content">
+                          <h1 class="text-3xl font-bold mb-4 text-primary">Hi, I'm Brit :)</h1>
+                          <div class="section-divider"></div>
+                          <p class="text-muted-foreground mb-4">
+                              I'm a UX Researcher and Designer passionate about creating user-centered experiences that bridge Eastern and Western design perspectives. With fluency in both English and basic proficiency in Mandarin, I bring a unique cultural understanding to my research and design work.
+                          </p>
+                          <p class="text-muted-foreground mb-4">
+                              Currently completing my degree at Penn State University, I've had the opportunity to work on various research projects, including an NSF REU at the University of Michigan-Flint and developing a major-matching application for undecided students.
+                          </p>
+                          <p class="text-muted-foreground">
+                              My background in cross-cultural research allows me to identify nuanced user needs across different markets, resulting in products that resonate globally while respecting local preferences.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <!-- Education Section -->
+          <section id="education" class="py-16">
+              <div class="container-narrow mx-auto px-8">
+                  <div class="section-header">
+                      <div class="section-title-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                          <h2 class="text-2xl font-bold text-primary">Education</h2>
+                      </div>
+                      <div class="section-divider"></div>
+                  </div>
+                  <div class="content-section">
+                      <div class="experience-item">
+                          <div class="flex justify-between items-start mb-4">
+                              <div class="flex items-start">
+                                  <img src="/Users/britneywang/Downloads/CsvApp-2/Professional/General/Portfolio2024Mich/img/edu-psu.png" alt="Penn State Logo" class="education-logo">
+                                  <div>
+                                      <h3 class="text-xl font-semibold">Penn State University</h3>
+                                      <p class="company-name">Human-Centered Design & Development</p>
+                                  </div>
+                              </div>
+                              <div class="date-location-container">
+                                  <p class="job-location">University Park, PA</p>
+                                  <p class="job-date">Aug 2021 - Dec 2025</p>
+                              </div>
+                          </div>
+                          <p class="text-muted-foreground">Pursuing a degree in Human-Centered Design & Development with focus areas in Diversity & Inclusion in Human Health Development, Digital Entrepreneurship & Innovation, and Chinese to creating accessible, inclusive, and innovative solutions for diverse communities.</p>
+                         
+                      </div>
+                      <div class="experience-item">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-start">
+                                <img src="img/about/NTNU-logo.png" alt="Penn State Logo" class="education-logo">
+                                <div>
+                                    <h3 class="text-xl font-semibold">National Taiwan Normal University</h3>
+                                    <p class="company-name">Mandarin Training Center & UX</p>
+                                </div>
+                            </div>
+                            <div class="date-location-container">
+                                <p class="job-location">Taipei, Taiwan</p>
+                                <p class="job-date">Jun 2025</p>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground">Enhancing Mandarin fluency through an 180-hour intensive course and taking UX research courses to strengthen cross-cultural collaboration and design inclusive, globally versatile solutions with an Asian cultural perspective.</p>
+                    </div>
+                  </div>
+              </div>
+          </section>
+
+          <!-- Work Experience Section -->
+          <section id="work" class="py-16">
+              <div class="container-narrow mx-auto px-8">
+                  <div class="section-header">
+                      <div class="section-title-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                          <h2 class="text-2xl font-bold text-primary">Work Experience</h2>
+                      </div>
+                      <div class="section-divider"></div>
+                  </div>
+                  <div class="content-section">
+                      <div class="experience-item">
+                          <div class="flex justify-between items-start mb-4">
+                              <div class="flex items-start">
+                                  <img src="img/about/work-umichflint-logo.png" alt="University of Michigan Logo" class="company-logo">
+                                  <div>
+                                      <h3 class="text-xl font-semibold">UX Researcher</h3>
+                                      <p class="company-name">NSF REU University of Michigan-Flint</p>
+                                  </div>
+                              </div>
+                              <div class="date-location-container">
+                                  <p class="job-location">Flint, MI</p>
+                                  <p class="job-date">May - Aug 2024</p>
+                              </div>
+                          </div>
+                          <p class="text-muted-foreground">Conducted user research on computer-mediated consent in online-to-person dating environments among aurally and visually disabled populations. Developed survey instruments, analyzed data using reflective thematic analysis, and presented findings to stakeholders.</p>
+                      </div>
+                      
+                      <div class="experience-item">
+                          <div class="flex justify-between items-start mb-4">
+                              <div class="flex items-start">
+                                  <img src="img/about/work-iyf.jpeg" alt="International Youth Foundation Logo" class="company-logo">
+                                  <div>
+                                      <h3 class="text-xl font-semibold">UX Content Strategist Intern</h3>
+                                      <p class="company-name">International Youth Foundation</p>
+                                  </div>
+                              </div>
+                              <div class="date-location-container">
+                                  <p class="job-location">Remote</p>
+                                  <p class="job-date">May - Jul 2023</p>
+                              </div>
+                          </div>
+                          <p class="text-muted-foreground">Developed 3 UX writing modules for a social media training program to empower Ethiopian youth as leaders and spearheaded the strategy and execution of a technology adoption presentation to 26 faculty members, leading a team of 3.</p>
+                      </div>
+
+                      <div class="experience-item">
+                          <div class="flex justify-between items-start mb-4">
+                              <div class="flex items-start">
+                                  <img src="img/about/exp-breakawave.png" alt="Penn State HCI Lab Logo" class="company-logo">
+                                  <div>
+                                      <h3 class="text-xl font-semibold">Business Concierge Intern</h3>
+                                      <p class="company-name">Breakawave</p>
+                                  </div>
+                              </div>
+                              <div class="date-location-container">
+                                  <p class="job-location">Sydney, Australia</p>
+                                  <p class="job-date">Jun - Aug 2022</p>
+                              </div>
+                          </div>
+                          <p class="text-muted-foreground">Conducted user-centered research to identify the needs of 500+ businesses and delivered tailored, cost-saving, and time-efficient solutions that met business requirements within expected timeframes.</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <!-- Clubs & Awards Section (Side by Side) -->
+          <section class="py-16 involvement-awards-section">
+              <div class="container-narrow mx-auto px-8">
+                  <div class="grid md:grid-cols-2 gap-8">
+                      <!-- Campus Involvement -->
+                      <div id="involvement">
+                          <div class="section-header">
+                              <div class="section-title-container">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                  <h2 class="text-2xl font-bold text-primary">Involvement</h2>
+                              </div>
+                              <div class="section-divider"></div>
+                          </div>
+                          <div class="content-section">
+                              <img src="img/about/psfa-freshman.jpg" alt="Campus Involvement" class="section-image">
+                              <ul class="involvement-list">
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">College of IST</h3>
+                                      <p class="involvement-role">Diplomat</p>
+                                  </li>
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">Society of Asian Scientists & Engineers</h3>
+                                      <p class="involvement-role">Conference Director</p>
+                                  </li>
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">Penn State Filipino Association</h3>
+                                      <p class="involvement-role">Active Member</p>                                 
+                                </li>
+                                <li class="involvement-item">
+                                    <h3 class="involvement-title">Fuzhounese Student Association</h3>
+                                    <p class="involvement-role"> Active Member</p>                                 
+                              </li>
+                                <li class="involvement-item">
+                                    <h3 class="involvement-title">Food Recovery Network</h3>
+                                    <p class="involvement-role">Volunteer</p>
+                                </li>
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">THON Finance Committee</h3>
+                                      <p class="involvement-role">Committee Member</p>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <!-- Awards -->
+                      <div id="awards">
+                          <div class="section-header">
+                              <div class="section-title-container">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                  <h2 class="text-2xl font-bold text-primary">Honors & Awards</h2>
+                              </div>
+                              <div class="section-divider"></div>
+                          </div>
+                          <div class="content-section">
+                              <img src="img/about/soph-queenmcd.jpg" alt="Awards and Honors" class="section-image">
+                              <ul class="involvement-list">
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">Dean's List 7 / 7</h3>
+                                      <p class="involvement-role">Aug 2021 - Dec 2024</p>
+                                  </li>
+                                  <li class="involvement-item">
+                                    <h3 class="involvement-title">Best Organized Researcher @ UMich</h3>
+                                    <p class="involvement-role">Aug 2024</p>
+                                </li>
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">Mary Lee Hobbs Emerging Leader</h3>
+                                      <p class="involvement-role">Apr 2023</p>
+                                  </li>
+                                  <li class="involvement-item">
+                                      <h3 class="involvement-title">Family IdeaMakers Challenge Finalist 
+                                    </h3>
+                                      <p class="involvement-role">Mar 2023</p>
+                                  </li>
+                                  <li class="involvement-item">
+                                    <h3 class="involvement-title">Nittany AI Challenge Semi-finalist
+                                  </h3>
+                                    <p class="involvement-role">Feb 2023</p>
+                                </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <!-- Skills Section -->
+          <section id="skills" class="py-16">
+              <div class="container-narrow mx-auto px-8">
+                  <div class="section-header">
+                      <div class="section-title-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                          <h2 class="text-2xl font-bold text-primary">Skills</h2>
+                      </div>
+                      <div class="section-divider"></div>
+                  </div>
+
+                  <div class="content-section">
+                      <div class="grid md:grid-cols-2 gap-8">
+                          <div class="skill-category">
+                              <h3 class="skill-category-title">Research</h3>
+                              <div>
+                                <span class="skill-tag">User Research</span>
+                                <span class="skill-tag">Survey Design</span>
+                                <span class="skill-tag">Thematic Analysis</span>
+                              </div>
+                          </div>
+                          <div class="skill-category">
+                              <h3 class="skill-category-title">Design & Development</h3>
+                              <div>
+                                  <span class="skill-tag">Wireframes & Sketches</span>
+                                  <span class="skill-tag">Prototyping</span>
+                                  <span class="skill-tag">UML Diagrames</span>
+                                  <span class="skill-tag">Usability Testing</span>
+                              </div>
+                          </div>
+                          <div class="skill-category">
+                              <h3 class="skill-category-title">Softwares</h3>
+                              <div>
+                                  <span class="skill-tag">Figma</span>
+                                  <span class="skill-tag">Miro</span>
+                                  <span class="skill-tag">Qualtrics</span>
+                                  <span class="skill-tag">Visual Studio Code</span>
+                                </div>
+                          </div>
+                          <div class="skill-category">
+                              <h3 class="skill-category-title">Languages</h3>
+                              <div>
+                                  <span class="skill-tag">English (Native)</span>
+                                  <span class="skill-tag">Fuzhounese (Fluent)</span>
+                                  <span class="skill-tag">Mandarin (Beginner)</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <!-- Certifications Section -->
+          <section id="certifications" class="py-16">
+              <div class="container-narrow mx-auto px-8">
+                  <div class="section-header">
+                      <div class="section-title-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+                          <h2 class="text-2xl font-bold text-primary">Certifications</h2>
+                      </div>
+                      <div class="section-divider"></div>
+                  </div>
+                  <div class="content-section">
                     
-                    <div class="grid md:grid-cols-2 gap-12 mb-12">
-                        <div>
-                            <img src="img/about/profile.jpg" class="rounded-lg shadow-md w-full object-cover" style="width: 85%;">
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-bold mb-4 text-primary">Hello, I'm Britney</h2>
-                            <p class="text-muted-foreground mb-4">
-                                I'm a UX Researcher and Designer passionate about creating user-centered experiences that bridge Eastern and Western design perspectives. With fluency in both English and Mandarin, I bring a unique cultural understanding to my research and design work.
-                            </p>
-                            <p class="text-muted-foreground mb-4">
-                                Currently completing my degree at Penn State University, I've had the opportunity to work on various research projects, including an NSF REU at the University of Michigan-Flint and developing a major-matching application for undecided students.
-                            </p>
-                            <p class="text-muted-foreground mb-4">
-                                My background in cross-cultural research allows me to identify nuanced user needs across different markets, resulting in products that resonate globally while respecting local preferences.
-                            </p>
-                        </div>
-                    </div>
+                      <div class="cert-item">
+                        <img src="img/about/cert-ixdf-logo.png" alt="Interaction Design Foundation" class="cert-logo">
+                        <div class="cert-content">
+                              <h3 class="cert-title">Design for Thought & Emotion</h3>
+                              <p class="cert-issuer">Interaction Design Foundation</p>
+                              <p class="cert-date">Issued: Jan 2025</p>
+                          </div>
+                      </div>
+                      <div class="cert-item">
+                        <img src="img/about/cert-ixdf-logo.png" alt="Interaction Design Foundation" class="cert-logo">
+                        <div class="cert-content">
+                              <h3 class="cert-title">Build a Standout UX/UI Portfolio</h3>
+                              <p class="cert-issuer">Interaction Design Foundation</p>
+                              <p class="cert-date">Issued: Jan 2025</p>
+                          </div>
+                      </div>
+                      <div class="cert-item">
+                        <img src="img/about/cert-ixdf-logo.png" alt="Interaction Design Foundation" class="cert-logo">
+                        <div class="cert-content">
+                              <h3 class="cert-title">User Experience</h3>
+                              <p class="cert-issuer">Interaction Design Foundation</p>
+                              <p class="cert-date">Issued: In Progress</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
 
-                    <div class="mb-12">
-                        <h2 class="text-2xl font-bold mb-6 text-primary">Education</h2>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="bg-light-blue p-6 rounded-lg">
-                                <h3 class="text-xl font-semibold mb-2">Penn State University</h3>
-                                <p class="text-muted-foreground">Bachelor of Science, Expected 2025</p>
-                                <p class="text-sm text-muted-foreground">Major: Human-Centered Design & Development</p>
-                            </div>
-                            <div class="bg-light-blue p-6 rounded-lg">
-                                <h3 class="text-xl font-semibold mb-2">University of Michigan-Flint</h3>
-                                <p class="text-muted-foreground">NSF Research Experience for Undergraduates, 2024</p>
-                                <p class="text-sm text-muted-foreground">Focus: UX Research in Accessibility</p>
-                            </div>
-                        </div>
-                    </div>
+         <!-- Contact Section -->
+         <p class="text-sm text-muted-foreground mb-2" style="text-align: center;">
+            © <span id="current-year"></span> Britney Wang
+            <br><br><br>
+        </p>
 
-                    <div class="mb-12">
-                        <h2 class="text-2xl font-bold mb-6 text-primary">Hobbies & Interests</h2>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-4 text-primary"><path d="M2 12a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V7H2Z"></path><path d="M6 11V8h12v3"></path></svg>
-                                <h3 class="text-lg font-semibold mb-2">Reading</h3>
-                                <p class="text-muted-foreground">I enjoy reading books on design thinking, psychology, and cultural studies to expand my perspective.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-4 text-primary"><path d="m7 11 2-2-2-2"></path><path d="M11 13h4"></path><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect></svg>
-                                <h3 class="text-lg font-semibold mb-2">Coding</h3>
-                                <p class="text-muted-foreground">I'm passionate about front-end development and enjoy creating interactive prototypes.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-4 text-primary"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                                <h3 class="text-lg font-semibold mb-2">Traveling</h3>
-                                <p class="text-muted-foreground">Exploring different cultures helps me understand diverse user perspectives and design needs.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-4 text-primary"><path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"></path><circle cx="17" cy="7" r="5"></circle></svg>
-                                <h3 class="text-lg font-semibold mb-2">Digital Art</h3>
-                                <p class="text-muted-foreground">I create digital illustrations and practice UI design in my free time to sharpen my visual skills.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-4 text-primary"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
-                                <h3 class="text-lg font-semibold mb-2">Podcasts</h3>
-                                <p class="text-muted-foreground">I listen to UX and design podcasts to stay updated with the latest industry trends and insights.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-4 text-primary"><path d="M2 12h20"></path><path d="M2 12a10 10 0 0 1 20 0"></path><path d="M2 12a10 10 0 0 0 20 0"></path><path d="M12 2v20"></path></svg>
-                                <h3 class="text-lg font-semibold mb-2">Basketball</h3>
-                                <p class="text-muted-foreground">Playing basketball helps me stay active and teaches me the value of teamwork and strategy.</p>
-                            </div>
-                        </div>
-                    </div>
+  </div>
 
-                    <div class="mb-12">
-                        <h2 class="text-2xl font-bold mb-6 text-primary">Skills</h2>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">User Research</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Usability Testing</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Figma</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Prototyping</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">HTML/CSS</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">JavaScript</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Bilingual (English/Mandarin)</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Contextual Inquiry</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Journey Mapping</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Competitive Analysis</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Wireframing</span>
-                            <span class="bg-light-blue px-3 py-1 rounded-full text-sm">Design Thinking</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section class="py-16 bg-light-blue">
-                <div class="container-narrow mx-auto px-8 text-center">
-                    <h2 class="text-3xl font-bold mb-12 text-primary">Get in Touch</h2>
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            Email Me
-                        </button>
-                        <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                            LinkedIn
-                        </button>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="py-6 px-8 bg-light-blue">
-            <div class="container-narrow mx-auto text-center">
-                <p class="text-sm text-muted-foreground">
-                    © <span id="current-year"></span> Britney Wang | UX Researcher bridging Eastern and Western design perspectives
-                </p>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
-            const currentYearElements = document.querySelectorAll("#current-year");
-            currentYearElements.forEach(element => {
-                element.textContent = new Date().getFullYear();
-            });
-        });
-    </script>
 </body>
 </html>
 

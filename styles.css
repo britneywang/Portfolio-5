@@ -12,6 +12,7 @@
   --muted-foreground: #64748b;
   --accent: #f1f5f9;
   --accent-foreground: #0f172a;
+  --light-yellow: #F2ECD3;
   --light-blue: #e6f2f5; /* Light blue color for header and footer */
   --destructive: #ef4444;
   --destructive-foreground: #f8fafc;
@@ -414,15 +415,7 @@ a {
   color: var(--primary-foreground);
 }
 
-/* Skill tag styles */
-.skill-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  background-color: white;
-  color: var(--primary);
-}
+
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
@@ -437,3 +430,487 @@ a {
   }
 }
 
+/* Common section toggle styles */
+.section-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--accent-foreground);
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s;
+  border: 1px solid var(--border);
+}
+
+.section-toggle h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.section-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.section-toggle.active svg {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-content.active {
+  max-height: 2000px;
+  padding: 1.5rem 1rem;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.section-icon {
+  margin-right: 0.75rem;
+}
+
+/* Project 1 specific styles */
+.bg-project1 .section-toggle, 
+project1.html .section-toggle {
+  background-color: #F2ECD3;
+}
+
+.bg-project1 .section-toggle:hover, 
+project1.html .section-toggle:hover {
+  background-color: #E5CD6F;
+}
+
+/* Project 2 specific styles */
+.bg-project2 .section-toggle, 
+project2.html .section-toggle {
+  background-color: #D9E8E9;
+}
+
+.bg-project2 .section-toggle:hover, 
+project2.html .section-toggle:hover {
+  background-color: #73A9AD;
+}
+
+/* Back to portfolio link */
+.back-to-portfolio {
+  position: fixed;
+  left: 20px;
+  top: 60px;
+  z-index: 1000;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.back-to-portfolio:hover {
+  color: var(--foreground);
+}
+
+.back-to-portfolio svg {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .back-to-portfolio {
+    left: 10px;
+    top: 10px;
+  }
+}
+
+.main-content {
+  padding-top: 60px;
+}
+
+/* PDF link styling */
+.pdf-link {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.pdf-link:hover {
+  color: #73A9AD;
+}
+
+/* Sidebar Navigation Styles */
+.sidebar-nav {
+  position: fixed;
+  left: 20px; /* Back to left side */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent; /* Transparent background */
+  padding: 1.5rem;
+  z-index: 100;
+  max-width: 200px;
+  display: none; /* Hidden by default on mobile */
+}
+
+.sidebar-nav-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--light-blue);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar-nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav-item {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-nav-item:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-nav-link {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-nav-link:hover {
+  color: var(--primary);
+}
+
+.sidebar-nav-link.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.sidebar-nav-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+
+/* Mobile toggle button for sidebar */
+.sidebar-toggle {
+  position: fixed;
+  left: 20px; /* Back to left side */
+  top: 120px;
+  background-color: transparent; /* Transparent background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  cursor: pointer;
+  border: none;
+  color: var(--primary);
+}
+
+/* Show sidebar on larger screens */
+@media (min-width: 1200px) {
+  .sidebar-nav {
+    display: block;
+  }
+  
+  .sidebar-toggle {
+    display: none;
+  }
+  
+  .container-narrow {
+    margin-left: 240px; /* Back to margin-left */
+    margin-right: auto; /* Keep centered */
+  }
+}
+
+header .container-narrow {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+/* Ensure sections are properly detected for highlighting */
+#overview, #accomplished, #beyond, #timeline, #reflections {
+  scroll-margin-top: 100px;
+}
+
+/* About page specific styles */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background-color: var(--light-blue);
+  margin-bottom: 2rem;
+}
+.section-divider1 {
+  width: 60px;
+  height: 3px;
+  background-color: var(--light-yellow);
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  scroll-margin-top: 100px; /* Add scroll margin for smooth scrolling */
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+}
+
+.section-content {
+  padding-top: 1rem;
+}
+
+.experience-item {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.company-name {
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.job-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.job-location {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.skill-category {
+  margin-bottom: 1.5rem;
+}
+
+.skill-category-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  border-bottom: 1px solid var(--light-blue);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.cert-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cert-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cert-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.cert-content {
+  flex-grow: 1;
+}
+
+.cert-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.cert-issuer {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.cert-date {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.content-section {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.intro-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  /* padding: 2rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.involvement-list {
+  list-style: none;
+  padding: 0;
+}
+
+.involvement-item {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  position: relative;
+  border-left: 2px solid var(--light-blue);
+}
+
+.involvement-item:last-child {
+  margin-bottom: 0;
+}
+
+.involvement-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.involvement-role {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-icon {
+  margin-right: 0.75rem;
+  color: var(--primary);
+}
+
+.education-logo, .company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 1.5rem;
+}
+
+.section-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.date-location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.profile-image-container {
+  display: flex;
+  align-items: flex-start; /* Changed from center to flex-start */
+  height: 100%;
+  padding-top: 0; /* Ensure no padding at top */
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  /* max-height: 450px; Increased from 400px to 450px */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Contact buttons */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  width: 140px; /* Fixed width for all buttons */
+  height: 40px; /* Fixed height for all buttons */
+}
+
+.contact-button:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.contact-button svg, .contact-button img {
+  margin-right: 0.5rem;
+}
+
+.ixdf-logo {
+  width: 24px;
+  height: 24px;
+}
+
+#involvement, #awards {
+  scroll-margin-top: 100px;
+}
+
+/* Ensure the involvement section is properly detected for highlighting */
+.involvement-awards-section {
+  scroll-margin-top: 100px;
+}

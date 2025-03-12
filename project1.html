@@ -1,328 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSF REU: The University of Michigan-Flint | Britney Wang</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .accordion-item {
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .accordion-trigger {
-            background-color: #F2ECD3;
-            color: var(--accent-foreground);
-            padding: 1rem;
-            width: 100%;
-            text-align: left;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accordion-trigger:hover {
-            background-color: #E5CD6F;
-        }
-
-        .accordion-trigger::after {
-            content: '\25BC';
-            font-size: 0.8em;
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-trigger.active::after {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            padding: 1rem;
-            display: none;
-            background-color: var(--background);
-        }
-
-        .accordion-content.active {
-            display: block;
-        }
-
-        .back-to-portfolio {
-            position: fixed;
-            left: 20px;
-            top: 60px;
-            z-index: 1000;
-            padding: 10px;
-            text-decoration: none;
-            color: var(--muted-foreground);
-            display: flex;
-            align-items: center;
-            font-weight: 500;
-        }
-
-        .back-to-portfolio:hover {
-            color: var(--foreground);
-        }
-        
-        .back-to-portfolio svg {
-            margin-right: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .back-to-portfolio {
-                left: 10px;
-                top: 10px;
-            }
-        }
-
-        .main-content {
-            padding-top: 60px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSF REU: The University of Michigan-Flint | Britney Wang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="bg-background min-h-screen">
-        <a href="index.html" class="back-to-portfolio">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Back to Portfolio
-        </a>
+  <div class="bg-background min-h-screen">
+      <header class="py-6 px-8">
+          <nav class="container-narrow mx-auto flex justify-between items-center">
+              <a href="index.html" class="hover:text-primary transition-colors">
+                  Britney Wang
+              </a>
+              <div class="flex items-center space-x-4">
+                  <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                  <a href="about.html" class="hover:text-primary transition-colors">About</a>
+              </div>
+          </nav>
+      </header>
 
-        <div class="container-narrow mx-auto px-8 py-12 main-content">
-            <h1 class="text-4xl font-bold mb-4">NSF REU : The University of Michigan-Flint</h1>
-            <p class="text-xl text-muted-foreground mb-12">
-                How is computer-mediated consent in online to-person dating environments exchanged among aurally and visually disabled populations?
-            </p>
+      <!-- Sidebar Toggle Button -->
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar-nav" id="sidebar-nav">
+          <ul class="sidebar-nav-list">
+              <li class="sidebar-nav-item">
+                  <a href="#overview" class="sidebar-nav-link" data-section="overview">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                      Project Overview
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#accomplished" class="sidebar-nav-link" data-section="accomplished">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                      Accomplishments
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#beyond" class="sidebar-nav-link" data-section="beyond">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                      Post-Program
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#timeline" class="sidebar-nav-link" data-section="timeline">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                      Timeline
+                  </a>
+              </li>
+              <li class="sidebar-nav-item">
+                  <a href="#reflections" class="sidebar-nav-link" data-section="reflections">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-nav-icon"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                      Reflections
+                  </a>
+              </li>
+          </ul>
+      </nav>
 
-            <br><br>
+      <div class="container-narrow mx-auto px-8 py-12 main-content">
+          <h1 class="text-4xl font-bold mb-4">NSF REU : The University of Michigan-Flint</h1>
+          <p class="text-xl text-muted-foreground mb-12">
+              How is computer-mediated consent in online to-person dating environments exchanged among aurally and visually disabled populations?
+          </p>
 
-            <img src="img/proj-umich/landing-cover.png"
-                alt="Global e-commerce concept"
-                class="rounded-lg object-cover w-full mb-12"
-                style="height: 60%;">
+          <br><br>
 
-            <br><br>
-            <div class="flex justify-between items-start mb-12 px-4">
-                <div class="flex flex-col items-center text-center space-y-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><polygon points="12 2 15 8 22 8 17 12 19 19 12 15 5 19 7 12 2 8 9 8" /></svg>
-                    <h2 class="text-sm font-semibold mb-1">Role</h2>
-                    <p class="text-sm text-muted-foreground">UX Researcher</p>
-                </div>
-                <div class="flex flex-col items-center text-center space-y-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <h2 class="text-sm font-semibold mb-1">Duration</h2>
-                    <p class="text-sm text-muted-foreground">May - Aug 2024</p>
-                </div>
-                <div class="flex flex-col items-center text-center space-y-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <h2 class="text-sm font-semibold mb-1">Team</h2>
-                    <p class="text-sm text-muted-foreground">3 UX Researchers<br>1 Mentor</p>
-                </div>
-            </div>
+          <img src="img/proj-umich/landing-cover.png"
+              alt="Global e-commerce concept"
+              class="rounded-lg object-cover w-full mb-12"
+              style="height: 60%;">
 
-            <br><br>
-
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
-                <p class="mb-4 text-muted-foreground">
-                    Last summer, I spent 10 weeks at the University of Michigan-Flint conducting UX research. Collaborating with 3 researchers and a mentor, I immersed myself in literature reviews, developed a comprehensive study plan, conducted a survey, and synthesized the findings by creating key themes. As this was my first experience in academia, it was a steep learning curve, but working hands-on with such a supportive team was incredibly rewarding.
-                </p>
-            </section>
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">What I Accomplished in 10 Weeks</h2>
-                <p class="mb-4 text-muted-foreground">
-                    • Familiarize myself with 10+ related literature reviews<br>
-                    • Applied for IRB approval to conduct our Qualtrics survey with 80+ questions<br>
-                    • Collected 68 out of 200 survey responses through Prolific recruitment<br>
-                    • Implemented reflective thematic analysis to uncover findings and create themes<br>
-                    • Delivered 10 presentations for weekly sprint reviews<br>
-                    • Attended weekly meetings and seminars (e.g. graduate school, mental health)<br>
-                    • Bonded with other researchers and mentors on our field trips :)<br>
-                </p>
-            </section>
-
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Beyond the NSF REU Program</h2>
-                <p class="mb-4 text-muted-foreground">
-                    • Successfully recieved all 200 survey responses<br>
-                    • Focusing on one of the three population groups in the data, I am analyzing and developing a theming story<br>
-                    • Process of submitting publication for the CHI Conference<br>
-                </p>
-            </section>
-
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Research Timeline</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-trigger">
-                            <span>1. Creating the Foundation - literature reviews, research structure & goals</span>
-                        </button>
-                        <div class="accordion-content">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <p class="mb-4 text-muted-foreground">
-                                    To kick off the project, I immersed myself in over 10 literature reviews, diving deep into the structure of research papers,
-                                    identifying knowledges gaps within the related field and exploring an UX methodological toolbox to identify the most effective
-                                    approach for our study.
-                                    <br><br>
-                                    In the research, particiaptory design is used to navigate how consent can be communicated in both online and in-person dating 
-                                    environments among populations with visual and aural disabilities to understand needed accomodations, comfort and safety.
-
-                                   
-                                    <br><br>
-
-                                    <img src="img/proj-umich/lit-reviews.png" style="width: 100%;">
-                 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-trigger">2. Designing the Study Plan - survey approach, PEERRS certification, IRB approval</button>
-                        <div class="accordion-content">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <p class="mb-4 text-muted-foreground">
-                                    With my team, I created a study plan to recruit at least 20 participants. Initially, we had planned to conduct in-person group interviews to explore how consent is exchanged in these contexts. However, due to resource limitations and accommodation concerns, we decided to transition to a survey approach. 
-                                    <br><br>
-                                    Since I was working with human subjects, I obtained certification in PEERRS (Program for Education and Evaluation in Responsible Research and Scholarship) research ethics and compliance to ensure the study adhered to ethical guidelines and best practices.
-                                    <br><br>
-                                    The Institutional Review Board (IRB) process, initially estimated to take a week, ended up taking nearly half of the program's duration. Determining the survey structure—including question flow, consent form, and story writing—required constant iterations. Based on IRB feedback and further literature reviews, I revised both the survey structure and content. After several rounds of revisions and multiple rejections from the IRB, I addressed the feedback and resolved inconsistencies, ultimately leading to the approval for our 80+ question survey to be launched.
-                                    <br><br>
-                                    Through Prolific, we successfully recruited 200 participants, focusing on individuals with aural and/or visual disabilities who had experience with online dating. I designed a survey structure with a flow aimed at understanding their online and in-person interactions, integrating participatory design methods through open-ended questions to spark product innovation.
-                                    <br><br>
-                                    
-                                    <img src="img/proj-umich/brainstorm-whiteboard.png">
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-trigger">3. Analysis Process - survey revisions, RTA, codebook & themes</button>
-                        <div class="accordion-content">
-                            <p class="mb-4 text-muted-foreground">
-                                To reach 200 participants, we first released the survey to 20 to ensure data alignment with our objectives. After receiving feedback, my team and I revised the survey questions before relaunching it to the remaining participants. We also reviewed additional literature to refine our data analysis methods.
-                                <br><br>
-                                I supported the use of Reflexive Thematic Analysis (RTA) for its flexibility in analyzing diverse quantitative data and its focus on identifying recurring patterns. This was crucial for understanding potential patterns across different disability groups. 
-                                <br><br>
-                                As we compiled the data in Miro, I created a codebook to identify consistent patterns and connected themes, leading to a deeper understanding of how aurally and visually disabled populations communicate consent.
-
-                                <div class="grid md:grid-cols-2 gap-8 mb-8">
-
-                                    <img src="img/proj-umich/uc-reu-miro.png"
-                                        alt="Before and After Comparison"
-                                        class="rounded-lg object-contain w-full">
-                
-                                    <img src="img/proj-umich/uc-reu-themes.png"
-                                        alt="Before and After Comparison"
-                                        class="rounded-lg object-contain w-full">
-                                </div>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Reflections & Results</h2>
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-
-                    <img src="img/proj-umich/uc-reu-doug.png"
-                        alt="Before and After Comparison"
-                        class="rounded-lg object-contain w-full">
-
-                    <img src="img/proj-umich/uc-reu-bbbd.png"
-                        alt="Before and After Comparison"
-                        class="rounded-lg object-contain w-full">
-                </div>
-                <p class="text-muted-foreground">
-                    Pictured above is my mentor Dr. Doug Zytko and co-researchers Brooke Bui, Brooklynn Kelly, & Devin Tebbe.
-                    <br><br>
-                    With no prior professional experience in this field, I walked in on my first day without expectations. 
-                    Flint was immediately different from the life I was used to. I had gone from a lively college town to what felt like a quiet, 
-                    unfamiliar place.
-                    <br><br>
-                    The first days were rough – no friends, nothing to do, I felt overwhelmed and lonely. I even wanted to leave. 
-                    But after connecting with the cohort and as the research progressed, I started to rediscover my sense of purpose.
-                    <br><br>
-                    I joined a project with this amazing team to understand how the aurally and visually impaired navigate consent in 
-                    online-to-in-person dating environments. 
-                    <br><br>
-                    The iterative process of conducting UX research was both challenging and rewarding, teaching me to trust myself and be 
-                    confident in my choices. It also demonstrated that things don't always go as planned. In this case, we faced a few 
-                    challenges that slowed us from analyzing all of our responses.
-                    <br><br>
-                    This experience in Flint was full of surprises. Despite its reputation, I discovered a strong, supportive community 
-                    within the research and the city itself.    
-                </p>
-            </section>
-        </div>
-
-        <!-- Contact Section -->
-      <section class="py-16 bg-light-blue">
-        <div class="container-narrow mx-auto px-8 text-center">
-          <h2 class="text-3xl font-bold mb-12 text-primary">Get in Touch</h2>
-          <div class="flex flex-wrap justify-center gap-6">
-            <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              Email Me
-            </button>
-            <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </button>
-            <!-- <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              GitHub
-            </button> -->
+          <br><br>
+          <div class="flex justify-between items-start mb-12 px-4">
+              <div class="flex flex-col items-center text-center space-y-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><polygon points="12 2 15 8 22 8 17 12 19 19 12 15 5 19 7 12 2 8 9 8" /></svg>
+                  <h2 class="text-sm font-semibold mb-1">Role</h2>
+                  <p class="text-sm text-muted-foreground">UX Researcher</p>
+              </div>
+              <div class="flex flex-col items-center text-center space-y-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <h2 class="text-sm font-semibold mb-1">Duration</h2>
+                  <p class="text-sm text-muted-foreground">May - Aug 2024</p>
+              </div>
+              <div class="flex flex-col items-center text-center space-y-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <h2 class="text-sm font-semibold mb-1">Team</h2>
+                  <p class="text-sm text-muted-foreground">3 UX Researchers<br>1 Mentor</p>
+              </div>
           </div>
-        </div>
-      </section>
-    </main>
 
-    <footer class="py-6 px-8 bg-light-blue">
-      <div class="container-narrow mx-auto text-center">
-        <p class="text-sm text-muted-foreground">
-          © <span id="current-year"></span> Britney Wang | UX Researcher bridging Eastern and Western design perspectives
-        </p>
+          <br><br>
+
+          <section id="overview" class="mb-12">
+              <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+              <div class="section-divider1"></div>
+              <p class="mb-4 text-muted-foreground">
+                  Last summer, I spent 10 weeks at the University of Michigan-Flint conducting UX research. Collaborating with 3 researchers and a mentor, I immersed myself in literature reviews, developed a comprehensive study plan, conducted a survey, and synthesized the findings by creating key themes. As this was my first experience in academia, it was a steep learning curve, but working hands-on with such a supportive team was incredibly rewarding.
+              </p>
+          </section>
+          <section id="accomplished" class="mb-12">
+              <h2 class="text-2xl font-bold mb-4">What I Accomplished in 10 Weeks</h2>
+              <div class="section-divider1"></div>
+              <p class="mb-4 text-muted-foreground">
+                  • Familiarize myself with 10+ related literature reviews<br>
+                  • Applied for IRB approval to conduct our Qualtrics survey with 80+ questions<br>
+                  • Collected 68 out of 200 survey responses through Prolific recruitment<br>
+                  • Implemented reflective thematic analysis to uncover findings and create themes<br>
+                  • Delivered 10 presentations for weekly sprint reviews<br>
+                  • Attended weekly meetings and seminars (e.g. graduate school, mental health)<br>
+                  • Bonded with other researchers and mentors on our field trips :)<br>
+              </p>
+          </section>
+
+          <section id="beyond" class="mb-12">
+              <h2 class="text-2xl font-bold mb-4">Beyond the NSF REU Program</h2>
+              <div class="section-divider1"></div>
+              <p class="mb-4 text-muted-foreground">
+                  • Successfully recieved all 200 survey responses<br>
+                  • Focusing on one of the three population groups in the data, I am analyzing and developing a theming story<br>
+                  • Process of submitting publication for the CHI Conference<br>
+              </p>
+          </section>
+
+          <section id="timeline" class="mb-12">
+              <h2 class="text-2xl font-bold mb-4">Timeline</h2>
+              <div class="section-divider1"></div>
+              <div class="accordion">
+                  <div class="mb-4">
+                      <div class="section-toggle active" data-section="foundation" style="background-color: #F2ECD3;">
+                          <h3 class="font-bold">
+                              <span class="section-icon">1.</span>
+                              Creating the Foundation
+                          </h3>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      </div>
+                      <div class="section-content active" id="foundation">
+                          <p class="mb-4 text-muted-foreground">
+                              To kick off the project, I immersed myself in over 10 literature reviews, diving deep into the structure of research papers,
+                              identifying knowledges gaps within the related field and exploring an UX methodological toolbox to identify the most effective
+                              approach for our study.
+                              <br><br>
+                              In the research, particiaptory design is used to navigate how consent can be communicated in both online and in-person dating 
+                              environments among populations with visual and aural disabilities to understand needed accomodations, comfort and safety.
+
+                             
+                              <br><br>
+
+                              <img src="img/proj-umich/lit-reviews.png" style="width: 100%;">
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="mb-4">
+                      <div class="section-toggle" data-section="study-plan" style="background-color: #F2ECD3;">
+                          <h3 class="font-bold">
+                              <span class="section-icon">2.</span>
+                              Designing the Study Plan
+                          </h3>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      </div>
+                      <div class="section-content" id="study-plan">
+                          <p class="mb-4 text-muted-foreground">
+                              With my team, I created a study plan to recruit at least 20 participants. Initially, we had planned to conduct in-person group interviews to explore how consent is exchanged in these contexts. However, due to resource limitations and accommodation concerns, we decided to transition to a survey approach. 
+                              <br><br>
+                              Since I was working with human subjects, I obtained certification in PEERRS (Program for Education and Evaluation in Responsible Research and Scholarship) research ethics and compliance to ensure the study adhered to ethical guidelines and best practices.
+                              <br><br>
+                              The Institutional Review Board (IRB) process, initially estimated to take a week, ended up taking nearly half of the program's duration. Determining the survey structure—including question flow, consent form, and story writing—required constant iterations. Based on IRB feedback and further literature reviews, I revised both the survey structure and content. After several rounds of revisions and multiple rejections from the IRB, I addressed the feedback and resolved inconsistencies, ultimately leading to the approval for our 80+ question survey to be launched.
+                              <br><br>
+                              Through Prolific, we successfully recruited 200 participants, focusing on individuals with aural and/or visual disabilities who had experience with online dating. I designed a survey structure with a flow aimed at understanding their online and in-person interactions, integrating participatory design methods through open-ended questions to spark product innovation.
+                              <br><br>
+                              
+                              <img src="img/proj-umich/brainstorm-whiteboard.png">
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="mb-4">
+                      <div class="section-toggle" data-section="analysis" style="background-color: #F2ECD3;">
+                          <h3 class="font-bold">
+                              <span class="section-icon">3.</span>
+                              Analysis Process
+                          </h3>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      </div>
+                      <div class="section-content" id="analysis">
+                          <p class="mb-4 text-muted-foreground">
+                              To reach 200 participants, we first released the survey to 20 to ensure data alignment with our objectives. After receiving feedback, my team and I revised the survey questions before relaunching it to the remaining participants. We also reviewed additional literature to refine our data analysis methods.
+                              <br><br>
+                              I supported the use of Reflexive Thematic Analysis (RTA) for its flexibility in analyzing diverse quantitative data and its focus on identifying recurring patterns. This was crucial for understanding potential patterns across different disability groups. 
+                              <br><br>
+                              As we compiled the data in Miro, I created a codebook to identify consistent patterns and connected themes, leading to a deeper understanding of how aurally and visually disabled populations communicate consent.
+
+                              <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+                                  <img src="img/proj-umich/uc-reu-miro.png"
+                                      alt="Before and After Comparison"
+                                      class="rounded-lg object-contain w-full">
+              
+                                  <img src="img/proj-umich/uc-reu-themes.png"
+                                      alt="Before and After Comparison"
+                                      class="rounded-lg object-contain w-full">
+                              </div>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <section id="reflections" class="mb-12">
+              <h2 class="text-2xl font-bold mb-4">Reflections</h2>
+              <div class="section-divider1"></div>
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+                  <img src="img/proj-umich/uc-reu-doug.png"
+                      alt="Before and After Comparison"
+                      class="rounded-lg object-contain w-full">
+
+                  <img src="img/proj-umich/uc-reu-bbbd.png"
+                      alt="Before and After Comparison"
+                      class="rounded-lg object-contain w-full">
+              </div>
+              <p class="text-muted-foreground">
+                  Pictured above is my mentor Dr. Doug Zytko and co-researchers Brooke Bui, Brooklynn Kelly, & Devin Tebbe.
+                  <br><br>
+                  With no prior professional experience in this field, I walked in on my first day without expectations. 
+                  Flint was immediately different from the life I was used to. I had gone from a lively college town to what felt like a quiet, 
+                  unfamiliar place.
+                  <br><br>
+                  The first days were rough – no friends, nothing to do, I felt overwhelmed and lonely. I even wanted to leave. 
+                  But after connecting with the cohort and as the research progressed, I started to rediscover my sense of purpose.
+                  <br><br>
+                  I joined a project with this amazing team to understand how the aurally and visually impaired navigate consent in 
+                  online-to-in-person dating environments. 
+                  <br><br>
+                  The iterative process of conducting UX research was both challenging and rewarding, teaching me to trust myself and be 
+                  confident in my choices. It also demonstrated that things don't always go as planned. In this case, we faced a few 
+                  challenges that slowed us from analyzing all of our responses.
+                  <br><br>
+                  This experience in Flint was full of surprises. Despite its reputation, I discovered a strong, supportive community 
+                  within the research and the city itself.    
+              </p>
+          </section>
       </div>
-    </footer>
-
-    </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionTriggers = document.querySelectorAll('.accordion-trigger');
-            
-            accordionTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const isActive = content.classList.contains('active');
-                    
-                    // Close all accordion items
-                    document.querySelectorAll('.accordion-content').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    document.querySelectorAll('.accordion-trigger').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    
-                    // Open the clicked item if it wasn't already active
-                    if (!isActive) {
-                        content.classList.add('active');
-                        this.classList.add('active');
-                    }
-                });
-            });
-
-            // Set current year in footer
-            const currentYearElements = document.querySelectorAll("#current-year");
-            currentYearElements.forEach(element => {
-                element.textContent = new Date().getFullYear();
-            });
-        });
-    </script>
+      
+      <p class="text-sm text-muted-foreground mb-2" style="text-align: center;">
+        © <span id="current-year"></span> Britney Wang
+        <br><br><br>
+    </p>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
-
