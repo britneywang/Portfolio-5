@@ -8,31 +8,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // Case studies data
   const caseStudies = [
     {
-      title: "NSF REU: The University of Michigan-Flint",
+      title: "The University of Michigan-Flint",
       description:
-        "How is computer-mediated consent in online to-person dating environments exchanged among aurally and visually disabled populations?",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+        "How is computer-mediated consent in online to-person dating settings exchanged among aurally and visually disabled populations?",
+      image: "img/thumbnails/proj-umich1.png",
       slug: "project1",
       skills: ["User Research"],
     },
     {
-      title: "CAS251: Major Match",
-      description: "How can students experience majors of interests prior to declaring a major?",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      title: "Major Match",
+      description: "How can students effectively explore and experience potential majors before making the critical decision to declare?",
+      image: "img/thumbnails/proj-majorMatch2.png",
       slug: "project2",
-      skills: ["Bilingual User Interviews", "Usability Testing", "Localization Strategy"],
+      skills: ["Design Thinking", "Lean Startup", "User Research"],
     },
     {
       title: "Global Travel Platform Localization",
       description:
         "Successfully adapted the booking process for multiple markets, leading to a 25% increase in bookings from Chinese users",
-      image:
-        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      image: "img/thumbnails/proj-sprint1.png",
       slug: "project3",
       skills: ["Contextual Inquiry", "Journey Mapping", "Competitive Analysis"],
     },
+    // {
+    //   title: "Aire",
+    //   description: "How can we help students studying abroad overcome the common challenges they face when planning solo or group trips to other destinations?",
+    //   image: "img/thumbnails/proj-aire1.png",
+    //   slug: "project4",
+    //   skills: ["Design Thinking", "UX Research"],
+
+    // }
   ]
 
   // Render case studies on the home page
