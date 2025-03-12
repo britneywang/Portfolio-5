@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Britney Wang UX Research Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | UX Research Portfolio | Britney Wang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="min-h-screen flex flex-col">
-        <header class="py-6 px-4 bg-accent">
-            <nav class="container mx-auto flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
-                    Britney Wang
-                </a>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="btn btn-ghost">Home</a>
-                    <a href="about.html" class="btn btn-ghost">About</a>
-                    <button class="btn btn-outline btn-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        <span class="sr-only">Toggle Language</span>
-                    </button>
-                </div>
-            </nav>
-        </header>
+  <div class="min-h-screen flex flex-col">
+    <header class="py-6 px-4 bg-accent">
+      <nav class="container-narrow mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-primary hover:text-primary-80 transition-colors">
+          Britney Wang
+        </a>
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <a href="about.html" class="hover:text-primary transition-colors">About</a>
+        </div>
+      </nav>
+    </header>
 
-        <main class="flex-grow bg-background">
-            <!-- About Me Section -->
-            <section class="py-16 bg-accent">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold mb-8 text-primary">About Me</h2>
-                    <p class="text-lg mb-4 text-muted-foreground">
-                        As a bilingual UX researcher fluent in English and Mandarin, I bring a unique cross-cultural perspective to
-                        every project. With 5 years of experience, I specialize in conducting user research that bridges Eastern and
-                        Western design philosophies, creating products that resonate with diverse user bases.
-                    </p>
-                    <p class="text-lg mb-4 text-muted-foreground">
-                        My background in cognitive psychology and human-computer interaction, combined with my multicultural
-                        understanding, allows me to uncover deep insights that might be missed in traditional single-culture
-                        research approaches.
-                    </p>
-                    <p class="text-lg text-muted-foreground">
-                        I'm passionate about creating inclusive, culturally sensitive designs that can succeed in both global and
-                        local markets. My goal is to help companies create products that not only meet user needs but also respect
-                        and celebrate cultural differences.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Skills and Methods Section -->
-            <section class="py-16 bg-background">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold mb-8 text-primary">Skills & Methods</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8" id="skills-container">
-                        <!-- Skills will be dynamically inserted here by JavaScript -->
-                    </div>
-                    <div id="skill-description" class="bg-accent/30 p-4 rounded-lg shadow-md hidden">
-                        <p class="text-primary-foreground"></p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="py-6 px-4 bg-accent">
-            <div class="container mx-auto text-center">
-                <p class="text-sm text-muted-foreground">
-                    © 2023 Britney Wang | UX Researcher bridging Eastern and Western design perspectives
-                </p>
+    <main class="flex-grow">
+      <section class="py-20 bg-accent">
+        <div class="container-narrow mx-auto px-4">
+          <h1 class="text-4xl font-bold mb-8 text-primary">About Me</h1>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-primary">My Background</h2>
+              <p class="text-muted-foreground mb-4">
+                I am a UX Researcher and Designer with a passion for creating user-centered experiences 
+                that bridge Eastern and Western design perspectives. With fluency in both English and 
+                Mandarin, I bring a unique cultural understanding to my research and design work.
+              </p>
+              <p class="text-muted-foreground mb-4">
+                My background in cross-cultural research allows me to identify nuanced user needs 
+                across different markets, resulting in products that resonate globally while 
+                respecting local preferences.
+              </p>
             </div>
-        </footer>
-    </div>
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-primary">Education</h2>
+              <div class="mb-4">
+                <h3 class="text-xl font-semibold">Master of Science in Information</h3>
+                <p class="text-muted-foreground">University of Michigan, 2022</p>
+                <p class="text-sm text-muted-foreground">Specialization: Human-Computer Interaction</p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Bachelor of Arts</h3>
+                <p class="text-muted-foreground">University of California, Berkeley, 2020</p>
+                <p class="text-sm text-muted-foreground">Major: Cognitive Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <script src="script.js"></script>
+      <section class="py-16 bg-background">
+        <div class="container-narrow mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8 text-primary">Skills & Expertise</h2>
+          <div class="flex flex-wrap gap-3 mb-6" id="skills-container">
+            <!-- Skills will be dynamically inserted here by JavaScript -->
+          </div>
+          <div class="p-6 bg-accent rounded-lg hidden" id="skill-description">
+            <p class="text-muted-foreground"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-6 px-4 bg-accent">
+      <div class="container mx-auto text-center">
+        <p class="text-sm text-muted-foreground">
+          © <span id="current-year"></span> Britney Wang | UX Researcher bridging Eastern and Western design perspectives
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

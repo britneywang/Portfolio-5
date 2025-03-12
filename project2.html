@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAS251: Major Match | Britney Wang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .accordion-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-trigger {
+            background-color: #D9E8E9;
+            color: var(--accent-foreground);
+            padding: 1rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-trigger:hover {
+            background-color: #73A9AD;
+        }
+
+        .accordion-trigger::after {
+            content: '\25BC';
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-trigger.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 1rem;
+            display: none;
+            background-color: var(--background);
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .back-to-portfolio {
+            position: fixed;
+            left: 20px;
+            top: 60px;
+            z-index: 1000;
+            padding: 10px;
+            text-decoration: none;
+            color: var(--muted-foreground);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .back-to-portfolio:hover {
+            color: var(--foreground);
+        }
+        
+        .back-to-portfolio svg {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-portfolio {
+                left: 10px;
+                top: 10px;
+            }
+        }
+
+        .main-content {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-background min-h-screen">
+        <a href="index.html" class="back-to-portfolio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Portfolio
+        </a>
+
+        <div class="container-narrow mx-auto px-8 py-12 main-content">
+            <h1 class="text-4xl font-bold mb-4">CAS251: Major Match</h1>
+            <p class="text-xl text-muted-foreground mb-12">
+                How can students experience majors of interests prior to declaring a major?
+            </p>
+
+            <br><br>
+
+            <img src="img/proj-cas251/landing-cover3.png"
+                alt="Global e-commerce concept"
+                class="rounded-lg object-cover w-full mb-12"
+                style="height: 60%;">
+
+            <br><br>
+            <div class="flex justify-between items-start mb-12 px-4">
+                <div class="flex flex-col items-center text-center space-y-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><polygon points="12 2 15 8 22 8 17 12 19 19 12 15 5 19 7 12 2 8 9 8" /></svg>
+                    <h2 class="text-sm font-semibold mb-1">Role</h2>
+                    <p class="text-sm text-muted-foreground">UX Designer<br>Founder</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h2 class="text-sm font-semibold mb-1">Duration</h2>
+                    <p class="text-sm text-muted-foreground">Aug - Dec 2024</p>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 mb-2 text-primary"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h2 class="text-sm font-semibold mb-1">Team</h2>
+                    <p class="text-sm text-muted-foreground">3 Undergraduate Students</p>
+                </div>
+            </div>
+
+            <br><br>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+                <p class="mb-4 text-muted-foreground">
+                    For my Shark Tank Simulation class at Penn State University last semester, we were tasked with addressing a societal challenge. I shared my personal challenges of navigating the complex process of selecting a major. We adopted the LEAN methodology and I applied design thinking to guide our process. Our goal was to develop an app that would help undecided students easily navigate their career paths.
+                </p>
+            </section>
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Result</h2>
+                <p class="mb-4 text-muted-foreground">
+                
+                    • Second most voted idea out of 20+ proposals<br>
+                    • Designed & developed a hi-fi Figma prototype, features include quiz, personalized list of majors, & journal<br>
+                    • Conducted 4 out of 12 semi-structured interviews and facilitated focus group of 20+ students<br>
+                    <br><br>
+                    <iframe id="#figma" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1000" height="600" src="https://embed.figma.com/design/CCwwaadIaIAQZwkpwOHqHY/Project-1---Campus-Connect?node-id=137-1702&embed-host=share" allowfullscreen class="rounded-lg object-cover w-full mb-12"></iframe>
+
+                </p>
+            </section>
+
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Timeline</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">
+                            <span>1. Esablishing Framework - key principles, pitch</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <p class="mb-4 text-muted-foreground">
+                                    Over the first three weeks, I deepened my understanding of lean startup principles, building on previous Penn State courses and insights from <i>The Mom Test</i> and class materials. I integrated design thinking throughout, particularly in key areas such as user research, problem definition, prototyping, and testing.
+                                    <br><br>
+                                    My startup idea stems from my personal journey of feeling uncertain about my career path. As a freshman, I felt pressured to know exactly what I wanted to do for the rest of my life, even before gaining any real experience in different fields.
+                                    <br><br>
+                                    Now, as a senior, I've developed an app that I wish I had during my freshman year—something that would help me explore and decide on a career path more effectively.                 
+                                    <a href="img/proj-cas251/cas251-pitch.pdf" target="_blank" class="pdf-link">Here's my pitch.</a>
+                                    <br><br>
+                                    <img src="img/proj-cas251/2nd-pitch.png" style="width: 100%;">
+                                </p>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">2. User Research - interviews, analysis, persona creation, problem refinement</button>
+                        <div class="accordion-content">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <p class="mb-4 text-muted-foreground">
+                                    I conducted semi-structured interviews across various grade levels, starting with a focus group of over 20 students, followed by 12 one-on-one interviews, 4 of which I personally led.
+                                    Our goal was to understand the experiences of undergraduates in selecting their majors, regardless of their academic year or career path.
+                                    <br><br>
+                                    I then organized the data using affinity mapping in Miro, where clear patterns emerged that highlighted key insights into the challenges students face. 
+                                    The findings will guide the development of a solution that better supports students in aligning their academic choices with their interests, goals, and passions.
+                                    <br><br>
+                                    Through user research and data analysis, we shifted the focus from helping students find a career to helping them choose the right major. The overwhelming number of options, fear of making the wrong choice, and external pressures revealed that students need more guidance in selecting a major that aligns with their true interests.
+                                    <br><br>
+                                    This led to the transition from a "career finder" tool to a "major match" solution, designed to address students' academic decisions and alleviate their concerns.
+                                    <br><br>
+                                    Based on these insights, I developed a user persona that represents the journey of an undecided college student—someone navigating the pressure and uncertainty of making the right decision about their future.
+                                    <br><br>
+                                    <img src="img/proj-cas251/persona.png" style="width: 100%;">
+                                </p>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">3. Design & Development - sketches, prototypes, design system</button>
+                        <div class="accordion-content">
+                            <p class="mb-4 text-muted-foreground">
+                                After gathering user insights, I created a lo-fi prototype with a journal-like design, aimed at helping students easily organize and reflect on their quiz results. This simple, structured layout offers a more personal and engaging way to explore academic and career options.
+                                <br><br>
+                                <img src="img/proj-cas251/sketch1.png" style="width: 100%;">
+                                <img src="img/proj-cas251/sketch2.png" style="width: 100%;">
+                                <img src="img/proj-cas251/sketch3.jpeg" style="width: 100%;">
+                                Using Figma, I developed a high-fidelity, interactive prototype that combines accessibility with functionality. It provides a seamless, engaging experience for students as they explore their major options, ensuring the tool is both user-friendly and effective.
+                                <br>
+                                <iframe id="#figma" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1000" height="600" src="https://embed.figma.com/design/CCwwaadIaIAQZwkpwOHqHY/Project-1---Campus-Connect?node-id=137-1702&embed-host=share" allowfullscreen class="rounded-lg object-cover w-full mb-12"></iframe>
+                                <br>
+                                I built a design system with consistent typography, reusable UI components, and a cohesive color palette to ensure a unified, professional look and feel. This system ensures a smooth, intuitive user experience and helps scale the app for future growth.
+                                <br><img src="img/proj-cas251/design-system.png" class="rounded-lg object-cover w-full mb-12" style="width: 100%;">
+                                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">4. Testing & Iterations - usability testing, revisions</button>
+                        <div class="accordion-content">
+                            <p class="mb-4 text-muted-foreground">
+                                After I conducted 4 usability tests, I identified key areas for improvement and made targeted updates to enhance navigation, organization, and overall user flow.
+                                <br><br>
+                                Revision #1: Progress Tracking<br><br>
+                                Feedback from users highlighted the need for better progress tracking. In response, I added a counter displaying the number of majors explored out of the total, giving users a clearer sense of their progress as they navigated through options.<br><br>
+                                <img src="img/proj-cas251/testing1.png" class="rounded-lg object-cover w-full mb-12" style="width: 100%;">
+                                <br>
+                                Revision #2: Streamlined Navigation<br><br>
+                                Users found the process of clicking through multiple categories tedious. To improve this, I consolidated the major details—such as career paths and job prospects—into a single section with a toggle feature, streamlining navigation and making it easier to access information quickly.<br><br>
+                                <img src="img/proj-cas251/testing2.png" class="rounded-lg object-cover w-full mb-12" style="width: 100%;">    
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Reflections & Results</h2>
+                <p class="text-muted-foreground">
+                    Two key instances from this project highlighted the importance of having rational behind every decision to avoid unnecessary revisions and delays.
+                    <br><br>
+                    While initially focusing on simplicity and functionality, I realized the result lacked visual appeal, which led me to redesign the interface to balance aesthetics and usability.
+                    <br><br>
+                    After our brainstorming session left the audience confused, we recognized the need for better team alignment. We regrouped, shared ideas, and combined the best elements to create a clearer, more unified vision for the prototype.
+                    <br><br>
+                    In conclusion, I found this project particularly rewarding as it demonstrated how the principles of design thinking extend beyond my UX classes. Both methodologies shared similar approaches, focusing on creating functional prototypes and validating them before investing significant resources.
+                </p>
+            </section>
+        </div>
+        
+        <!-- Contact Section -->
+        <section class="py-16 bg-light-blue">
+            <div class="container-narrow mx-auto px-8 text-center">
+                <h2 class="text-3xl font-bold mb-12 text-primary">Get in Touch</h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email Me
+                    </button>
+                    <button class="btn btn-outline hover:bg-primary hover:text-primary-foreground">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4 text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-6 px-8 bg-light-blue">
+            <div class="container-narrow mx-auto text-center">
+                <p class="text-sm text-muted-foreground">
+                    © <span id="current-year"></span> Britney Wang | UX Researcher bridging Eastern and Western design perspectives
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+            
+            accordionTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isActive = content.classList.contains('active');
+                    
+                    // Close all accordion items
+                    document.querySelectorAll('.accordion-content').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    document.querySelectorAll('.accordion-trigger').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the clicked item if it wasn't already active
+                    if (!isActive) {
+                        content.classList.add('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Set current year in footer
+            const currentYearElements = document.querySelectorAll("#current-year");
+            currentYearElements.forEach(element => {
+                element.textContent = new Date().getFullYear();
+            });
+        });
+    </script>
+</body>
+</html>
+
